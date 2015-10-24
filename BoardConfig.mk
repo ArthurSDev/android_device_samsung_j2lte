@@ -1,7 +1,7 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
-#include vendor/samsung/j2lte/BoardConfigVendor.mk
+include vendor/samsung/j2lte/BoardConfigVendor.mk
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -19,6 +19,7 @@ TARGET_BOOTLOADER_BOARD_NAME := EXYNOS3475
 BOARD_KERNEL_CMDLINE := 
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --dt device/samsung/j2lte/dt.img
 #Check all above this
 
 # Partitions
