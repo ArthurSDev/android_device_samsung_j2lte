@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_j2lte.mk
+    $(LOCAL_DIR)/omni_j2lte.mk

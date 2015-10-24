@@ -1,8 +1,5 @@
 USE_CAMERA_STUB := true
 
-# inherit from the proprietary version
-include vendor/samsung/j2lte/BoardConfigVendor.mk
-
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := 3475
@@ -41,6 +38,13 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCAR
 
 # TWRP
 TW_THEME := portrait_hdpi
+TW_TARGET_USES_QCOM_BSP := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_INCLUDE_CRYPTO := true
 TW_SCREEN_BLANK_ON_BOOT := true
+TARGET_RECOVERY_FSTAB := device/samsung/j2lte/twrp.fstab
+
+
+# don't take forever to wipe
+BOARD_SUPPRESS_SECURE_ERASE := true
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD

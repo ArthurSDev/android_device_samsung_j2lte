@@ -1,8 +1,7 @@
+ifneq ($(filter j2lte,$(TARGET_DEVICE)),)
+
 LOCAL_PATH := $(call my-dir)
 
-include $(CLEAR_VARS)
+include $(call all-makefiles-under,$(LOCAL_PATH))
 
-ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
-
-# include the non-open-source counterpart to this file
--include vendor/samsung/j2lte/AndroidBoardVendor.mk
+endif
